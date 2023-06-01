@@ -1,4 +1,20 @@
-Svetly 1
-Svetly 2
-Svetly 3
-Svetly 4
+Double Apple
+Mint
+Watermelon
+Grape
+Peach
+Strawberry
+Blueberry
+Mango
+Lemon
+Orange
+Cherry
+Rose
+Cappuccino
+Vanilla
+Cola
+Pineapple
+Kiwi
+Guava
+Bubble Gum
+Cinnamon
