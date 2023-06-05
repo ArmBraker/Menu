@@ -6,38 +6,75 @@
     <title>Tabak Menu</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="./CSS/style.css" />
-    <style>
-      .container {
-        display: flex;
-      }
-      .app {
-        flex: 1;
-      }
-    </style>
   </head>
 
   <body>
-    <div id="app">
-      <div class="container">
-        <div id="SvetlyTabak" class="app">
-          <h1>Svetlý</h1>
-          <div class="container">
-            <ul>
-              <li v-for="item in svetlyMenuItems" :key="item.id">{{ item }}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div id="TmavyTabak" class="app">
-          <h1>Tmavý</h1>
-          <div class="container">
-            <ul>
-              <li v-for="item in tmavyMenuItems" :key="item.id">{{ item }}</li>
-            </ul>
+    <div class="app" id="app">
+      <div class="outer-border">
+        <div class="mid-border">
+          <div class="inner-border">
+            <div class="smoke-effect"></div>
+            <div class="header">
+              <img
+                class="logo"
+                src="./Images/up in smoke 2022 SHADOW.png"
+                alt="Company Logo"
+              />
+              <h1>Tabak Menu</h1>
+              <div class="avatar">
+                <img
+                  src="https://cdn.pixabay.com/photo/2020/04/27/15/54/hookah-5100433_1280.png"
+                  alt="Avatar"
+                />
+              </div>
+            </div>
+            <div class="menu-container">
+              <div class="category">
+                <h2 class="category-title">Svetly Tabak</h2>
+                <div class="grid">
+                  <div
+                    v-for="(column, columnIndex) in svetlyColumns"
+                    :key="columnIndex"
+                    class="column"
+                  >
+                    <ul class="menu-list">
+                      <li
+                        class="menu-item"
+                        v-for="item in column"
+                        :key="item.id"
+                      >
+                        {{ item }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="category">
+                <h2 class="category-title">Tmavy Tabak</h2>
+                <div class="grid">
+                  <div
+                    v-for="(column, columnIndex) in tmavyColumns"
+                    :key="columnIndex"
+                    class="column"
+                  >
+                    <ul class="menu-list">
+                      <li
+                        class="menu-item"
+                        v-for="item in column"
+                        :key="item.id"
+                      >
+                        {{ item }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+</body>
 
     <script>
       new Vue({
@@ -45,6 +82,9 @@
         data: {
           svetlyMenuItems: [],
           tmavyMenuItems: [],
+          svetlyColumns: [],
+          tmavyColumns: [],
+          columnIndex: 0,
         },
         mounted() {
           this.fetchSvetlyMenuData();
@@ -61,7 +101,14 @@
                   .split("\n")
                   .map((line) => line.trim())
                   .filter((line) => line !== "");
-                this.svetlyMenuItems = menuItems;
+
+                const columns = [];
+                for (let i = 0; i < menuItems.length; i += 10) {
+                  const column = menuItems.slice(i, i + 10);
+                  columns.push(column);
+                }
+
+                this.svetlyColumns = columns;
               })
               .catch((error) => {
                 console.error("Error fetching menu data:", error);
@@ -77,7 +124,14 @@
                   .split("\n")
                   .map((line) => line.trim())
                   .filter((line) => line !== "");
-                this.tmavyMenuItems = menuItems;
+
+                const columns = [];
+                for (let i = 0; i < menuItems.length; i += 10) {
+                  const column = menuItems.slice(i, i + 10);
+                  columns.push(column);
+                }
+
+                this.tmavyColumns = columns;
               })
               .catch((error) => {
                 console.error("Error fetching menu data:", error);
@@ -86,5 +140,4 @@
         },
       });
     </script>
-  </body>
 </html>
