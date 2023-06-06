@@ -14,17 +14,17 @@
 body {
   background-color: #000;
   color: #fff;
-  padding: 20px;
   font-family: system-ui;
+  padding: 20px;
 }
 
 .app {
   display: flex;
+  padding: auto;
 }
 
 .header {
   text-align: center;
-  padding: 20px;
 }
 .logo {
   width: 35vh;
@@ -54,10 +54,13 @@ body {
 
 .menu-container {
   padding: 20px;
+  margin: 0 auto;
 }
+
 .category {
   margin-bottom: 20px;
 }
+
 .category-title {
   font-size: 24px;
   font-weight: bold;
@@ -68,14 +71,20 @@ body {
 .grid {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
+
+@media (max-width: 860px) {
+  .grid{
+    grid-auto-flow: row;
+  }
+}
+
 
 .menu-list {
   margin-bottom: 10px;
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .menu-item {
@@ -135,4 +144,9 @@ h2 {
 }
 .avatar img {
   width: 200px;
+}
+
+
+li {
+  font-size:larger;
 }
