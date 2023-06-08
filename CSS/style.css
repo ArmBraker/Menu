@@ -62,7 +62,7 @@ body {
 }
 
 .category-title {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -130,10 +130,11 @@ body {
 
 h1,
 h2 {
+  font-size:2.5em;
   background: linear-gradient(to right, #ffd700, #ffaf00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 4px rgb(163 155 123 / 50%);
   text-transform: uppercase;
 }
 
@@ -149,4 +150,6 @@ h2 {
 
 li {
   font-size:larger;
+  text-shadow: 2px 2px 4px rgb(0 0 0);
+  
 }
