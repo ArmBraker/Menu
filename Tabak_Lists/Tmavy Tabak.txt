@@ -16,20 +16,3 @@ Cola
 Pineapple
 Kiwi
 Guava
-Bubble Gum
-Cinnamon
-Double Apple
-Mint
-Watermelon
-Grape
-Peach
-Strawberry
-Blueberry
-Mango
-Lemon
-Orange
-Cherry
-Rose
-Cappuccino
-Vanilla
-Cola
